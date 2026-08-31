@@ -1,0 +1,27 @@
+{
+  // Pin the project venv (Python 3.12) so Pylance resolves fastapi,
+  // pydantic, sqlalchemy, etc. instead of auto-detecting an interpreter.
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+  "python.terminal.activateEnvInCurrentTerminal": true,
+
+  // Resolve `from app.routers import leaderboard` from the repo root.
+  "python.analysis.extraPaths": ["${workspaceFolder}"],
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.typeCheckingMode": "basic",
+
+  // Keep the file tree and search results free of build noise.
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true
+  },
+  "search.exclude": {
+    "**/venv": true,
+    "**/__pycache__": true
+  },
+
+  "[python]": {
+    "editor.formatOnSave": false,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
+  }
+}
